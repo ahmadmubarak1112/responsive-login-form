@@ -15,6 +15,7 @@ body {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 .container {
@@ -33,7 +34,7 @@ body {
 .col-1 {
     color: #ffffff;
     width: min(625px, 70%);
-    margin: 0.8em 4em;
+    margin: 0.8em auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -51,7 +52,7 @@ body {
 }
 
 .col-1 h1 {
-    font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+    font-size: clamp(2.2rem, 5vw, 2.8rem);
     line-height: 0.92em;   
     margin-top: 5px;
     text-transform: uppercase;
@@ -267,6 +268,14 @@ body {
 
 .pop-up button:hover {
     background-color: #136dd3;
+}
+
+@media(min-width: 600px) {
+
+    .col-1 {
+        margin: 0.8em 4em;
+    }
+
 }
 
 @media(min-width: 1024px) {
