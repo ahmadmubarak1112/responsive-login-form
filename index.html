@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata.com - Eksplorasi dunia! (Static Login Form Demo)</title>
+    
+    <!----- CSS ----->
+    <link rel="stylesheet" href="style.css">
+
+    <!----- GOOGLE FONT ----->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!----- CONTAINER ----->
+    <div class="container">
+
+        <!----- COLUMN 1 - MAIN TEXT ----->
+        <div class="col-1">
+
+            <h3>Wisata.com</h3>
+            <h1>Jelajahi Cakrawala</h1>
+            <h4>Saat destinasi impianmu menjadi kenyataan.</h4>
+            <p>Mulailah perjalanan di mana setiap sudut dunia berada dalam jangkauan Anda.</p>
+
+        </div>
+
+        <!----- COLUMN 1 - MAIN FORM ----->
+        <div class="col-2">
+
+            <form action="">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Masukkan email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Masukkan password" required>
+
+                <small class="min-pass-char">Password harus minimal 8 karakter!</small>
+
+                <a href="" class="forgot">Lupa Password?</a>
+
+                <button class="sign-in">LOGIN</button>
+
+                <p class="atau">atau</p>
+
+                <p class="google-login">
+                    <img src="assets/svg/google-svg.svg" alt="logo google">
+                    <a href="">Login dengan Google</a>
+                </p>
+            
+                <p class="new-acc">Belum punya akun? <a href="">Buat akun</a></p>
+
+            </form>
+
+        </div>
+        
+        <!----- OVERLAY ----->
+        <div class="overlay"></div>
+
+        <!----- POP UP ----->
+        <div class="pop-up">
+
+            <h2 class="pop-up-title">Anda telah berhasil login!</h2>
+            <h4 class="count-down">3</h4>
+
+            <button>OK</button>
+
+        </div>
+
+    </div>
+
+<!----- JAVASCRIPT ----->
+<script src="script.js"></script>
+
+</body>
+</html>
