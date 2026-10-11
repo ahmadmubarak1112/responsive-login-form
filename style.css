@@ -11,6 +11,18 @@
     --hover-clr: #c3c3c3;
 }
 
+/***** REMOVING THE BUILT-IN EYE ICON (REVEAL) IN MICROSOFT EDGE *****/
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+.material-symbols-outlined {
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;
+}
+
 body {
     font-family: "Outfit", sans-serif;
     font-optical-sizing: auto;
@@ -34,7 +46,7 @@ body {
 .col-1 {
     color: #ffffff;
     width: min(625px, 70%);
-    margin: 0.8em auto;
+    margin: 2rem auto 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -76,7 +88,8 @@ body {
 
 .col-2 {
     width: min(450px, 92%);
-    margin: 0 auto;
+    height: 418px;
+    margin: -65px auto 0;
     padding: 1.5em 2em;
     border-radius: 20px;
     color: var(--clr-font);
@@ -99,6 +112,38 @@ body {
     border-radius: var(--b-rad);
     padding: 0 1.1em;
     margin-top: -10px;
+}
+
+.col-2 .password-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.password-wrapper #password {
+    width: 100%;
+    padding-right: 2.6rem;
+}
+
+.password-wrapper .visib-on {
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+    color: #1f1f1f;
+    cursor: pointer;
+    display: none;
+}
+
+.password-wrapper .visib-off {
+    position: absolute;
+    top: 0;
+    right: 0.5em;
+    color: #1f1f1f;
+    cursor: pointer;
+    display: none;
+}
+
+.password-wrapper .show-pass.show {
+    display: inline-block;
 }
 
 .col-2 small {
@@ -307,6 +352,11 @@ body {
         width: 100%;
         justify-content: center;
         margin: 0;
+    }
+
+    .col-2 {
+        margin-top: inherit;
+        height: min-content;
     }
 
 }

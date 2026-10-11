@@ -83,13 +83,46 @@ loginBtn.addEventListener("click", function(e) {
 
 ///// SHOW MINIMUM PASSWORD CHARACTER WARNING
 const minimumPasswordChar = document.querySelector('.min-pass-char');
+const showPasswordOn = document.querySelector('.visib-on');
+const showPasswordOff = document.querySelector('.visib-off');
+const showPasswordIcons = document.querySelectorAll('.show-pass');
 
 inputPass.addEventListener("input", function() {
 
-    if( inputPass.value.length === 0 ) minimumPasswordChar.classList.remove("active");
+    if( inputPass.value.length === 0 ) {
 
-    else if( inputPass.value.length < 8 ) minimumPasswordChar.classList.add("active");
+        minimumPasswordChar.classList.remove("active");
+        showPasswordOn.classList.remove('show');
+
+    }
+
+    else if( inputPass.value.length > 0 && inputPass.value.length < 8 ) {
+
+        showPasswordOn.classList.add('show'); 
+        minimumPasswordChar.classList.add("active");
+        
+    }
 
     else if( inputPass.value.length >= 8 ) minimumPasswordChar.classList.remove("active");
 
 });
+
+showPasswordIcons.forEach( (showPasswordIcon) => {
+
+    showPasswordIcon.addEventListener('click', () => {
+
+        const passwordAttr = inputPass.getAttribute('type') === 'password' ? 'text' : 'password';
+        inputPass.setAttribute('type', passwordAttr);
+
+        if( showPasswordIcon.classList.contains('show') ) {
+
+            showPasswordOn.classList.toggle('show');
+            showPasswordOff.classList.toggle('show');
+
+        }
+
+    });
+
+});
+
+
